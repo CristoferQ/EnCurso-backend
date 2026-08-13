@@ -20,8 +20,8 @@ public class User {
     public User(Long id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
-        this.email = new Email(email);
-        this.password = new Password(password);
+        this.email = email != null ? new Email(email) : null;
+        this.password = password != null ? new Password(password) : null;
         this.role = role;
     }
 
@@ -42,19 +42,19 @@ public class User {
     }
 
     public String getEmail() {
-        return email.value();
+        return email != null ? email.value() : null;
     }
 
     public void setEmail(String email) {
-        this.email = new Email(email);
+        this.email = email != null ? new Email(email) : null;
     }
 
     public String getPassword() {
-        return password.value();
+        return password != null ? password.value() : null;
     }
 
     public void setPassword(String password) {
-        this.password = new Password(password);
+        this.password = password != null ? new Password(password) : null;
     }
 
     public String getRole() {
@@ -78,7 +78,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email.value() + '\'' +
+                ", email='" + (email != null ? email.value() : null) + '\'' +
                 ", role='" + role + '\'' +
                 ", enrollments=" + enrollments +
                 '}';

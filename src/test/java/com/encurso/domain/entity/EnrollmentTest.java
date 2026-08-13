@@ -16,7 +16,7 @@ class EnrollmentTest {
     @BeforeEach
     void setUp() {
         enrollment = new Enrollment();
-        user = new User(1L,"John Doe", "john@email.com", "password123", "student");
+        user = new User(1L,"John Doe", "john@email.com", "SecurePass123!", "student");
         course = new Course("Java Basics", "Learn Java");
     }
 
@@ -100,7 +100,7 @@ class EnrollmentTest {
     @Test
     @DisplayName("Should handle multiple users in different enrollments")
     void testMultipleEnrollmentsWithDifferentUsers() {
-        User user2 = new User(1L, "Jane Doe", "jane@email.com", "password456", "student");
+        User user2 = new User(1L, "Jane Doe", "jane@email.com", "SecurePass456!", "student");
         
         Enrollment enrollment1 = new Enrollment(user, course);
         Enrollment enrollment2 = new Enrollment(user2, course);

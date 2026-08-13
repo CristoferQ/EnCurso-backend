@@ -16,7 +16,7 @@ public class UserLoginRequest {
     }
 
     public String getPassword() {
-        return password.value();
+        return password != null ? password.value() : null;
     }
 
     public void setPassword(String password) {
