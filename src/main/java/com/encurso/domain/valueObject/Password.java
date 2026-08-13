@@ -4,7 +4,11 @@ import com.encurso.domain.exception.ValidationException;
 
 public record Password(String value) {
     public Password {
-        if (value == null || value.trim().isEmpty()) {
+        if (value == null) {
+            throw new ValidationException("La contraseña no puede ser nula.");
+        }
+        
+        if (value.trim().isEmpty()) {
             throw new ValidationException("La contraseña no puede estar vacía.");
         }
         

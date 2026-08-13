@@ -29,11 +29,11 @@ class UserTest {
     @Test
     @DisplayName("Should create user with parameterized constructor")
     void testUserParameterizedConstructor() {
-        User newUser = new User(null, "John Doe", "john@email.com", "password123", "student");
+        User newUser = new User(null, "John Doe", "john@email.com", "SecurePass123!", "student");
         
         assertEquals("John Doe", newUser.getName());
         assertEquals("john@email.com", newUser.getEmail());
-        assertEquals("password123", newUser.getPassword());
+        assertEquals("SecurePass123!", newUser.getPassword());
         assertNull(newUser.getId());
     }
 
@@ -61,8 +61,8 @@ class UserTest {
     @Test
     @DisplayName("Should set and get password")
     void testSetAndGetPassword() {
-        user.setPassword("securePassword");
-        assertEquals("securePassword", user.getPassword());
+        user.setPassword("SecurePass123!");
+        assertEquals("SecurePass123!", user.getPassword());
     }
 
     @Test
